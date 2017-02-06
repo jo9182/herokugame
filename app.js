@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var seven = require('./routes/seven');
+var two = require('./routes/two');
+var five = require('./routes/five');
+var fortyeight = require('./routes/fortyeight');
 
 var app = express();
 
