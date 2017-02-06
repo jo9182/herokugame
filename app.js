@@ -9,6 +9,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
+app.get('/', function(req,res)
+{
+    res.send("Route path at base address");
+});
 
 app.get('/test', function(req, res) {
   res.send("Youre gay");
