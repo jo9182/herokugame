@@ -3,11 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.write("Welcome to the game. Type answers to the questions posed in the url, like so: ");
-	res.write("...com/ANSWER");
-	res.write("First question: How many colors are there in a rainbow? ");
-	res.write("(Hint: type the number.) ");
-    res.end();
+    res.send("Welcome to the game. Type answers to the questions posed in the url, like so:  ...com/ANSWER  First question: How many colors are there in a rainbow?  (Hint: type the number.)")
+}
 });
 
 module.exports = router;
