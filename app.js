@@ -26,6 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+app.get('/test', function(req, res) {
+  res.send("Youre gay");
+});
+
+/*
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -44,9 +49,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get('/test', function(request, response) {
-  response.send("Youre gay");
-});
+
 
 
 module.exports = app;
+*/
