@@ -1,22 +1,31 @@
-	var express = require('express');
-  var http = require('http');
+var express = require('express');
+var http = require('http');
 
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
+app.all("*", function(request, response, next) {
+  response.writeHead(200, { "Content-Type": "text/plain" });
+  next();
+});
 
 app.get('/', function(req,res)
 {
-    res.send("Route path at base address");
+    res.end("Route path at base address");
 });
 
 app.get('/test', function(req, res) {
-  res.send("Youre gay");
+  res.end("Youre gay");
 });
+
+app.get("*", function(request, response) {
+  response.end("404!");
+});
+
+http.createServer(app).listen(1337);
+
+
+
 
 /*
 // catch 404 and forward to error handler
